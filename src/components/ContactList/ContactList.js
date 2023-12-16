@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 
 export const ContactList = ({ contacts, onClick }) => {
