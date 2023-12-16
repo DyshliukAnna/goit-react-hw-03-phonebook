@@ -3,12 +3,14 @@ import { nanoid } from 'nanoid';
 import '../App.css';
 import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
+import { Filter } from './Filter';
 export class App extends Component {
   state = {
     contacts: [
-      { name: 'Rosie Simpson', id: nanoid() },
-      { name: 'Hermione Kline', id: nanoid() },
-      { name: 'Eden Clements', id: nanoid() },
+      { name: 'Rosie Simpson', id: nanoid(), number: '459-12-56' },
+      { name: 'Hermione Kline', id: nanoid(), number: '443-89-12' },
+      { name: 'Eden Clements', id: nanoid(), number: '645-17-79' },
+      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
   };
@@ -30,6 +32,12 @@ export class App extends Component {
       filter: e.currentTarget.value,
     });
   };
+  handleDeleteContact = id => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
+  };
+
   render() {
     const normilizedFilter = this.state.filter.toLowerCase();
 
@@ -47,6 +55,10 @@ export class App extends Component {
           required
         />
         <h2 className="container__title">Contacts</h2>
+        <Filter
+          value={this.state.filter}
+          onChangeFilter={this.handleInputFind}
+        />
         <ContactList contacts={searchedContact} />
       </div>
     );
