@@ -59,7 +59,10 @@ export class App extends Component {
           value={this.state.filter}
           onChangeFilter={this.handleInputFind}
         />
-        <ContactList contacts={searchedContact} />
+        <ContactList
+          contacts={searchedContact}
+          onClick={this.handleDeleteContact}
+        />
       </div>
     );
   }

@@ -5,16 +5,15 @@
 
 .contactsItem {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 40px;
   margin-bottom: 20px;
 }
 
 .contactsItem button {
-  border: none;
-  padding: 20px 400px;
+  border: 2px solid black;
+  padding: 10px 20px;
   border-radius: 5px;
-  background-color: rgba(235, 0, 0, 0.333);
   cursor: pointer;
+  background-color: #fff;
 }

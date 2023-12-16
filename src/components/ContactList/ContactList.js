@@ -7,6 +7,9 @@ export const ContactList = ({ contacts, onClick }) => {
       {contacts.map(({ id, name, number }) => (
         <li key={id} className={css.contactsItem}>
           {name}: {number}
+          <button type="button" onClick={() => onClick(id)}>
+            Delete
+          </button>
         </li>
       ))}
     </ul>
