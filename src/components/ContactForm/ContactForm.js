@@ -21,6 +21,7 @@ export class ContactForm extends Component {
     const { name, value } = event.currentTarget;
 
     this.setState({ [name]: value });
+
   };
 
   resetForm = () => {
