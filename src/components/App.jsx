@@ -16,19 +16,19 @@ export class App extends Component {
     filter: '',
   };
 
-  componentDidMount() {
-    const contacts = localStorage.getItem(DATA_KEY);
-    if (contacts) {
-      this.setState ({ contacts: JSON.parse(contacts)});
-  }
-}
+//   componentDidMount() {
+//     const contacts = localStorage.getItem(DATA_KEY);
+//     if (contacts) {
+//       this.setState ({ contacts: JSON.parse(contacts)});
+//   }
+// }
 
-  componentDidUpdate(_, prevState) {
-    const { contacts } = this.state;
-    if (prevState.contacts !== contacts) {
-      localStorage.setItem(DATA_KEY, JSON.stringify(contacts)) ;
-    }
-  }
+//   componentDidUpdate(_, prevState) {
+//     const { contacts } = this.state;
+//     if (prevState.contacts !== contacts) {
+//       localStorage.setItem(DATA_KEY, JSON.stringify(contacts)) ;
+//     }
+//   }
   formSubmitHandler = data => {
     const existingContact = this.state.contacts.find(
       contact => contact.name === data.name
